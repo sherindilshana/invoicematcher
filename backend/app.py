@@ -5,11 +5,15 @@ import pdfplumber
 from flask import Flask, request, jsonify
 from google import genai
 from google.genai import types
+from flask_cors import CORS # <--- ADD THIS IMPORT
 
 # --- 1. SETUP ---
 
 # Initialize Flask app
 app = Flask(__name__)
+# Initialize CORS - allow requests from any origin (*)
+# The '*' is safe here because the endpoint is controlled and requires file upload
+CORS(app) 
 
 # Initialize Gemini Client
 # It automatically looks for the GEMINI_API_KEY environment variable
