@@ -1,3 +1,4 @@
 Flask
 pdfplumber
 google-genai
+gunicorn
