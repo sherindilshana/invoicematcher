@@ -13,7 +13,11 @@ from flask_cors import CORS # <--- ADD THIS IMPORT
 app = Flask(__name__)
 # Initialize CORS - allow requests from any origin (*)
 # The '*' is safe here because the endpoint is controlled and requires file upload
-CORS(app) 
+CORS(app, 
+     resources={r"/match": {"origins": "*"}},
+     allow_methods=["GET", "POST", "OPTIONS"],
+     allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Accept"]
+)
 
 # Initialize Gemini Client
 # It automatically looks for the GEMINI_API_KEY environment variable
