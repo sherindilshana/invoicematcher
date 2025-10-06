@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'dart:async'; // <--- ADD THIS LINE to fix the 'Timer' class error
 
 // NOTE: Replace 127.0.0.1 with your computer's local IP address for mobile testing.
 const String backendUrl = 'https://invoicematcher-api.onrender.com/match';
